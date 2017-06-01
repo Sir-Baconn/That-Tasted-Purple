@@ -15,6 +15,7 @@ public class Summoner {
 	private int accountId;
 	
 	private int championMasteryScore;
+	private int  userLeague;
 	
 	public Summoner(long id, String name, int profileIconId, String revisionDate, int summonerLevel){
 		this.id = id;
@@ -55,11 +56,19 @@ public class Summoner {
 		return this.championMasteryScore;
 	}
 	
+	public int getLeague(){
+		return this.userLeague;
+	}
+	
 	
 	//---------- Setters ----------//
 	
 	public void setChampionMasteryScore(int score){
 		this.championMasteryScore = score;
+	}
+	
+	public void setLeague(int res1){
+		this.userLeague = res1;
 	}
 	
 	/**
