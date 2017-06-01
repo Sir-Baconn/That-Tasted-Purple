@@ -36,7 +36,8 @@ public class SummonerRequests {
 	 * @throws Exception
 	 */
 	public static Summoner getSummoner(String summonerName, String region) throws Exception{
-		String request = "https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + summonerName + "?api_key=" + APIRequests.API_KEY;
+		String request = summonerName.contains(" ") ? "https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + replaceSpaces(summonerName) + "?api_key=" + APIRequests.API_KEY : 
+														"https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + summonerName + "?api_key=" + APIRequests.API_KEY;
 		String response = APIRequests.getResponse(request);
 		JsonObject jsonObj = new JsonParser().parse(response).getAsJsonObject();
 		
@@ -55,6 +56,18 @@ public class SummonerRequests {
 		String response = APIRequests.getResponse(request);
 		
 		return Integer.parseInt(response); 
+	}
+	
+	public static String replaceSpaces(String str) {
+	    String[] words = str.split(" ");
+	    StringBuilder sentence = new StringBuilder(words[0]);
+
+	    for (int i = 1; i < words.length; ++i) {
+	        sentence.append("%20");
+	        sentence.append(words[i]);
+	    }
+
+	    return sentence.toString();
 	}
 	
 }
