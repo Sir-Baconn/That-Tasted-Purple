@@ -10,7 +10,7 @@ import java.net.URL;
  * @author steve
  * @author ralph
  */
-public class APIRequests {
+public class APIRequest {
 	
 	/**
 	 * API Key to send requests with

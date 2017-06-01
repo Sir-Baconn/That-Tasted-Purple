@@ -9,7 +9,7 @@ import com.google.gson.JsonParser;
  * @author steve
  * @author ralph
  */
-public class SummonerRequests {
+public class SummonerRequest {
 	
 	private static Gson gson = new Gson();
 	
@@ -22,7 +22,7 @@ public class SummonerRequests {
 	 */
 	public static Summoner getSummoner(int id, String region) throws Exception{
 		String request = "https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/" + id + "?api_key=94753ea6-ae18-4f15-bff6-7ecc63e766a5";
-		String response = APIRequests.getResponse(request);
+		String response = APIRequest.getResponse(request);
 		JsonObject jsonObj = new JsonParser().parse(response).getAsJsonObject();
 		
 		return gson.fromJson(jsonObj, Summoner.class);
@@ -36,9 +36,9 @@ public class SummonerRequests {
 	 * @throws Exception
 	 */
 	public static Summoner getSummoner(String summonerName, String region) throws Exception{
-		String request = summonerName.contains(" ") ? "https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + replaceSpaces(summonerName) + "?api_key=" + APIRequests.API_KEY : 
-														"https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + summonerName + "?api_key=" + APIRequests.API_KEY;
-		String response = APIRequests.getResponse(request);
+		String request = summonerName.contains(" ") ? "https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + replaceSpaces(summonerName) + "?api_key=" + APIRequest.API_KEY : 
+														"https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/by-name/" + summonerName + "?api_key=" + APIRequest.API_KEY;
+		String response = APIRequest.getResponse(request);
 		JsonObject jsonObj = new JsonParser().parse(response).getAsJsonObject();
 		
 		return gson.fromJson(jsonObj, Summoner.class);
@@ -53,7 +53,7 @@ public class SummonerRequests {
 	 */
 	public static int getChampionMasteryScore(int id, String region) throws Exception{
 		String request = "https://" + region + ".api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/" + id + "?api_key=94753ea6-ae18-4f15-bff6-7ecc63e766a5";
-		String response = APIRequests.getResponse(request);
+		String response = APIRequest.getResponse(request);
 		
 		return Integer.parseInt(response); 
 	}
