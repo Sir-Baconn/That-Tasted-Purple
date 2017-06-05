@@ -17,6 +17,7 @@ public class Summoner {
 	private int championMasteryScore;
 	
 	private League league;
+	private Match match;
 	
 	public Summoner(long id, String name, int profileIconId, String revisionDate, int summonerLevel){
 		this.id = id;
@@ -61,6 +62,10 @@ public class Summoner {
 		return this.league;
 	}
 	
+	public Match getMatch(){
+		return this.match;
+	}
+	
 	
 	//---------- Setters ----------//
 	
@@ -71,6 +76,11 @@ public class Summoner {
 	public void setLeague(League res1){
 		this.league = res1;
 	}
+	
+	public void setMatch(Match res2){
+		this.match =res2;
+	}
+	
 	
 	/**
 	 * Summoner toString

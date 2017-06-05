@@ -25,6 +25,7 @@ public class LeagueRequest{
 		String response = APIRequest.getResponse(request);
 		JsonArray arr = new JsonParser().parse(response).getAsJsonArray();
 		JsonObject jobj = arr.get(0).getAsJsonObject();
+		
     	return gson.fromJson(jobj, League.class);
     }
 }
