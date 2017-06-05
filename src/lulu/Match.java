@@ -13,4 +13,8 @@ public class Match{
 	public long getGameId(){
 		return gameId;
 	}
+	
+	public String toString(){
+		return this.gameId + "";
+	}
 }
