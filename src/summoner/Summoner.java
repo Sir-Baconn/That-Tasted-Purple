@@ -1,4 +1,7 @@
-package lulu;
+package summoner;
+
+import lulu.League;
+import lulu.Match;
 
 /**
  * Summoner class that represents a summoner in LOL. This will act as a summoner's profile.

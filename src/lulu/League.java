@@ -4,7 +4,7 @@ public class League {
 	private String leagueName;
 	private String tier;
 	private String queueType;
-	private char rank;
+	private String rank;
 	private long playerOrTeamId;
 	private String playerOrTeamName;
 	private int leaguePoints;
@@ -19,7 +19,7 @@ public class League {
 		return this.tier;
 	}
 	
-	public char getRank(){
+	public String getRank(){
 		return this.rank;
 	}
 	

@@ -1,4 +1,4 @@
-package lulu;
+package requests;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

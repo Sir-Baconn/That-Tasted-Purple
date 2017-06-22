@@ -1,5 +1,10 @@
 package lulu;
 
+import requests.LeagueRequest;
+import requests.MatchRequest;
+import requests.RuneRequest;
+import requests.SummonerRequest;
+import summoner.Summoner;
 
 /**
  * Class to test the stuff 
@@ -23,7 +28,11 @@ public class Main {
 		
 		System.out.println(shadyCloud + " " + shadyCloud.getLeague());
 		
-		System.out.println(shadyCloud+ " " + shadyCloud.getMatch());
+		System.out.println(shadyCloud + " " + shadyCloud.getMatch());
+		
+		System.out.println(RuneRequest.getRune(5337));
+		
+		
 	}
 
 }

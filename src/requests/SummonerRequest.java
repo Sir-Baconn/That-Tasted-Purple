@@ -1,8 +1,10 @@
-package lulu;
+package requests;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
+import summoner.Summoner;
 
 /**
  * SummonerRequests class that creates requests related to summoners and sends these requests to APIRequests
@@ -21,7 +23,7 @@ public class SummonerRequest {
 	 * @throws Exception
 	 */
 	public static Summoner getSummoner(int id, String region) throws Exception{
-		String request = "https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/" + id + "?api_key=94753ea6-ae18-4f15-bff6-7ecc63e766a5";
+		String request = "https://" + region + ".api.riotgames.com/lol/summoner/v3/summoners/" + id + "?api_key=" + APIRequest.API_KEY;
 		String response = APIRequest.getResponse(request);
 		JsonObject jsonObj = new JsonParser().parse(response).getAsJsonObject();
 		
@@ -52,7 +54,7 @@ public class SummonerRequest {
 	 * @throws Exception
 	 */
 	public static int getChampionMasteryScore(int id, String region) throws Exception{
-		String request = "https://" + region + ".api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/" + id + "?api_key=94753ea6-ae18-4f15-bff6-7ecc63e766a5";
+		String request = "https://" + region + ".api.riotgames.com/lol/champion-mastery/v3/scores/by-summoner/" + id + "?api_key=" + APIRequest.API_KEY;
 		String response = APIRequest.getResponse(request);
 		
 		return Integer.parseInt(response); 

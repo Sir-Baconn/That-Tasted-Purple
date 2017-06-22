@@ -1,9 +1,11 @@
-package lulu;
+package requests;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
+import lulu.League;
 
 public class LeagueRequest{
 

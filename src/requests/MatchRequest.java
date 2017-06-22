@@ -1,9 +1,11 @@
-package lulu;
+package requests;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
+import lulu.Match;
 
 public class MatchRequest{
 	
@@ -21,12 +23,6 @@ public class MatchRequest{
 			String json = gson.toJson(Jarray1);
 			JsonArray arr1 = new JsonParser().parse(json).getAsJsonArray();
 			JsonObject jobj = arr1.get(0).getAsJsonObject();
-			
-			//JsonObject jsonObj2 = new JsonParser().parse(json).getAsJsonObject();
-			
-			/*String json2 = gson.toJson(jsonObj2);
-			JsonArray arr2 = new JsonParser().parse(json2).getAsJsonArray();
-			JsonObject jobj = arr.get(0).getAsJsonObject(); */
 			
 			return gson.fromJson(jobj, Match.class);
 	 }
