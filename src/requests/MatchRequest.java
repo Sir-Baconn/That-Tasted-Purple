@@ -11,7 +11,7 @@ public class MatchRequest{
 	
 	 private static Gson gson = new Gson();
 
-	 public static Match getMatchList(int accId, String region) throws Exception{
+	 public static Match getMatchList(int accId, String region, int matchNum) throws Exception{
 	    	
 			String request = "https://" + region + ".api.riotgames.com/lol/match/v3/matchlists/by-account/" + accId + "/recent?api_key=6c14dd62-6922-4419-8969-d149c8ab39c4";
 			String response = APIRequest.getResponse(request);
@@ -22,8 +22,17 @@ public class MatchRequest{
 			
 			String json = gson.toJson(Jarray1);
 			JsonArray arr1 = new JsonParser().parse(json).getAsJsonArray();
-			JsonObject jobj = arr1.get(0).getAsJsonObject();
 			
+			JsonObject jobj = arr1.get(matchNum).getAsJsonObject();
 			return gson.fromJson(jobj, Match.class);
+			
+			/*
+			JsonObject jobj = arr1.get(0).getAsJsonObject();
+			return gson.fromJson(jobj, Match.class);
+			*/
+
+			
 	 }
+	 
+	 
 }
