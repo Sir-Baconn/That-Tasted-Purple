@@ -13,7 +13,7 @@ public class MatchRequest{
 
 	 public static Match getMatchList(int accId, String region) throws Exception{
 	    	
-			String request = "https://" + region + ".api.riotgames.com/lol/match/v3/matchlists/by-account/" + accId + "/recent?api_key=6c14dd62-6922-4419-8969-d149c8ab39c4";
+			String request = "https://" + region + ".api.riotgames.com/lol/match/v3/matchlists/by-account/" + accId + "/recent?api_key=" + APIRequest.API_KEY;
 			String response = APIRequest.getResponse(request);
 			JsonObject jsonObj = new JsonParser().parse(response).getAsJsonObject();
 			

@@ -23,7 +23,7 @@ public class LeagueRequest{
     
     public static League getPosition(int id, String region) throws Exception{
     	
-		String request = "https://" + region + ".api.riotgames.com/lol/league/v3/positions/by-summoner/" + id + "?api_key=94753ea6-ae18-4f15-bff6-7ecc63e766a5";
+		String request = "https://" + region + ".api.riotgames.com/lol/league/v3/positions/by-summoner/" + id + "?api_key=" + APIRequest.API_KEY;
 		String response = APIRequest.getResponse(request);
 		JsonArray arr = new JsonParser().parse(response).getAsJsonArray();
 		JsonObject jobj = arr.get(0).getAsJsonObject();

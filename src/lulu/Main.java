@@ -32,6 +32,7 @@ public class Main {
 		
 		System.out.println(RuneRequest.getRune(5337));
 		
+		RuneRequest.getRunePage(myid);
 		
 	}
 
