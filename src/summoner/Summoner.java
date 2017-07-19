@@ -2,7 +2,7 @@ package summoner;
 
 import lulu.League;
 import lulu.Match;
-
+import lulu.Game;
 /**
  * Summoner class that represents a summoner in LOL. This will act as a summoner's profile.
  * @author steve
@@ -21,7 +21,8 @@ public class Summoner {
 	
 	private League league;
 	private Match match;
-	
+	private Game game;
+
 	public Summoner(long id, String name, int profileIconId, String revisionDate, int summonerLevel){
 		this.id = id;
 		this.name = name;
@@ -69,6 +70,10 @@ public class Summoner {
 		return this.match;
 	}
 	
+	public Game getGame(){
+		return this.game;
+	}
+	
 	
 	//---------- Setters ----------//
 	
@@ -84,6 +89,9 @@ public class Summoner {
 		this.match =res2;
 	}
 	
+	public void setGame(Game res3){
+		this.game = res3;
+	}
 	
 	/**
 	 * Summoner toString
