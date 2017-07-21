@@ -25,11 +25,10 @@ public class Main {
 		Summoner shadyCloud = SummonerRequest.getSummoner(myid, Region.NA);
 		
 		shadyCloud.setChampionMasteryScore(SummonerRequest.getChampionMasteryScore(myid, Region.NA));			//set shadyCloud's mastery score
-	    shadyCloud.setLeague(LeagueRequest.getPosition(myid, Region.NA));
+	    shadyCloud.setLeague(LeagueRequest.getPosition(myid, Region.NA)); //sets shadyCloud's rank
 
 		
 		System.out.println(shadyCloud + " " + shadyCloud.getChampionMasteryScore());
-		
 		System.out.println(shadyCloud + " " + shadyCloud.getLeague());
 		
 
