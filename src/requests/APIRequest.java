@@ -15,7 +15,7 @@ public class APIRequest {
 	/**
 	 * API Key to send requests with
 	 */
-	public static final String API_KEY = "RGAPI-87153a00-08e7-47d3-9976-958c2dc5fe22";
+	public static final String API_KEY = "RGAPI-16c9d8fe-1e34-4034-90de-89fe4bb21df0";
 	
 	/**
 	 * Send a request to Riot's API and get a JSON response

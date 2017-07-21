@@ -14,7 +14,7 @@ public class GameRequest {
 	 
 	 public static Game getGameInfo(String matchID, String region, int playerNum ) throws Exception{
 	 
-			String request = "https://" + region + ".api.riotgames.com/lol/match/v3/matches/" + matchID + "?api_key=6c14dd62-6922-4419-8969-d149c8ab39c4";
+			String request = "https://" + region + ".api.riotgames.com/lol/match/v3/matches/" + matchID + "?api_key=" + APIRequest.API_KEY;
 			String response = APIRequest.getResponse(request);
 			JsonObject jsonObj1 = new JsonParser().parse(response).getAsJsonObject();
 			

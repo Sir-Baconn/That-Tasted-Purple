@@ -65,13 +65,13 @@ public class RuneRequest {
 			runeids.add(j.getAsJsonObject().get("runeId").getAsInt());
 		}
 		
-		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for(int i : runeids){
-			map.compute(i, (k, v) -> (v == null) ? 1 : v + 1);
-		}
-		
-		map.entrySet().stream().filter(i -> i.getValue() > 1)
-								.forEach(i -> System.out.println(i.getKey() + " " + i.getValue()));
+//		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+//		for(int i : runeids){
+//			map.compute(i, (k, v) -> (v == null) ? 1 : v + 1);
+//		}
+//		
+//		map.entrySet().stream().filter(i -> i.getValue() > 1)
+//								.forEach(i -> System.out.println(i.getKey() + " " + i.getValue()));
 		
 		return null;
 	}

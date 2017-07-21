@@ -1,5 +1,7 @@
 package lulu;
 
+import java.util.concurrent.TimeUnit;
+
 import requests.GameRequest;
 import requests.LeagueRequest;
 import requests.MatchRequest;
@@ -7,12 +9,6 @@ import requests.RuneRequest;
 import requests.SummonerRequest;
 import summoner.Summoner;
 
-import java.util.concurrent.TimeUnit;
-/**
- * Class to test the stuff 
- * @author steve
- * @author ralph
- */
 public class Main {
 	public static void main(String[] args) throws Exception{
 		//System.out.println(SummonerRequests.getSummoner(32641520, Region.NA));		//get summoner via id
@@ -35,9 +31,8 @@ public class Main {
 		
 		System.out.println(RuneRequest.getRune(5337));
 		
-<<<<<<< HEAD
 		RuneRequest.getRunePage(myid);
-=======
+		
 	    shadyCloud.setGame(GameRequest.getGameInfo(matchID, Region.NA, 1));
 		System.out.println(shadyCloud+ " " + shadyCloud.getGame());
 		
@@ -53,9 +48,6 @@ public class Main {
 			System.out.println(shadyCloud+ " " + shadyCloud.getGame());
 			TimeUnit.SECONDS.sleep(1);
 		}
->>>>>>> 311de355c1fc170a74b41afb92cf24575826cef1
 		
 	}
-
 }
-
